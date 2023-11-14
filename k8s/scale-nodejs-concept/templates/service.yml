@@ -1,0 +1,16 @@
+apiVersion: v1
+kind: Service
+metadata:
+  labels:
+    app: scale-nodejs-concept
+  name: scale-nodejs-concept
+spec:
+  ports:
+  - name: scale-nodejs-concept
+    port: 3000
+    protocol: TCP
+    targetPort: 3000
+  selector:
+    app: scale-nodejs-concept
+  type: NodePort
+

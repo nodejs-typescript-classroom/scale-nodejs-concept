@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: scale-nodejs-concept
+  name: scale-nodejs-concept
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: scale-nodejs-concept
+  template:
+    metadata:
+      labels:
+        app: scale-nodejs-concept
+    spec:
+      containers:
+      - image: yuanyu90221/scale-nodejs-concept:dev
+        name: scale-nodejs-concept
+        ports:
+        - containerPort: 3000
+
